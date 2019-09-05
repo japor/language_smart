@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInstructorSpecialtiesTable extends Migration
+class CreateTeacherSpecialtiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateInstructorSpecialtiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('instructor_specialties', function (Blueprint $table) {
-            $table->bigInteger('instructor_id')->unsigned();
-            $table->foreign('instructor_id')->references('id')->on('instructors');
+        Schema::create('teacher_specialties', function (Blueprint $table) {
+            $table->bigInteger('teacher_id')->unsigned();
+            $table->foreign('teacher_id')->references('id')->on('teachers');
             $table->bigInteger('specialty_id')->unsigned();
             $table->foreign('specialty_id')->references('id')->on('specialties');
         });
@@ -28,6 +28,6 @@ class CreateInstructorSpecialtiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('instructor_specialties');
+        Schema::dropIfExists('teacher_specialties');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCourseCategoriesTable extends Migration
+class CreateProductCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateCourseCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('course_categories', function (Blueprint $table) {
-            $table->bigInteger('course_id')->unsigned();
-            $table->foreign('course_id')->references('id')->on('courses');
+        Schema::create('product_categories', function (Blueprint $table) {
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
         });
@@ -28,6 +28,6 @@ class CreateCourseCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_categories');
+        Schema::dropIfExists('product_categories');
     }
 }

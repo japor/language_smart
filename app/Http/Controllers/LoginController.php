@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,7 +13,8 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:admin')->except('logout');
-        $this->middleware('guest:writer')->except('logout');
+        $this->middleware('guest:student')->except('logout');
+        $this->middleware('guest:teacher')->except('logout');
     }
 
     public function showAdminLoginForm()

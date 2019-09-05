@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('admin/login', 'LoginController@showAdminLoginForm');
+Route::post('admin/login', 'LoginController@showAdminLoginForm');
+
+Route::get('student/login', 'LoginController@showStudentLoginForm');
+Route::post('student/login', 'LoginController@showStudentLoginForm');
+
+Route::get('teacher/login', 'LoginController@showTeacherLoginForm');
+Route::post('teacher/login', 'LoginController@showTeacherLoginForm');
